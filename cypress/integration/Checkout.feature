@@ -10,7 +10,7 @@ Feature: Checkout
     And I add item to cart
     And proceed to checkout
     And I accept terms and conditions and proceed to checkout
-#    And I choose check as payment method
-#    And I click confirm order
-#    Then I verify order is complete and successful
-#    And I log out
+    And I choose check as payment method
+    And I click confirm order
+    Then I verify order is complete and successful
+    And I log out
