@@ -104,3 +104,6 @@ Then(/^I verify that no results for your search were displayed$/, function () {
     cy.get('.alert').should('be.visible')
 
 });
+Then(/^I log out$/, function () {
+    cy.get('.logout').click()
+});
