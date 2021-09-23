@@ -21,9 +21,6 @@ Then(/^I verify that I am logged in successfully$/, function () {
     cy.get('.account > span').should('have.text', 'Mike Davies')
 });
 
-Then(/^I log out$/, function () {
-    cy.get('.logout').click()
-});
 When(/^I search for dress$/, function () {
     cy.get('#search_query_top').type('dress')
     cy.get('#searchbox > .btn').click()
@@ -38,18 +35,22 @@ When(/^proceed to checkout$/, function () {
     cy.get('.cart_navigation > .button > span').click()
     cy.get('.cart_navigation > .button > span').click()
 });
+
 When(/^I accept terms and conditions and proceed to checkout$/, function () {
     cy.get('#cgv').click()
     cy.get('.cart_navigation > .button > span').click()
 });
 
 When(/^I choose check as payment method$/, function () {
-
+    cy.get('.bankwire').click()
 });
+
 When(/^I click confirm order$/, function () {
+    cy.get('#cart_navigation > .button > span').click()
 
 });
 Then(/^I verify order is complete and successful$/, function () {
+    cy.get('.box').contains('Your order on My Store is complete.')
 
 });
 
