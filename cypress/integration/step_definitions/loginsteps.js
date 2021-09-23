@@ -53,3 +53,57 @@ Then(/^I verify order is complete and successful$/, function () {
     cy.get('.box').contains('Your order on My Store is complete.')
 
 });
+
+Given(/^I am on the homepage$/, function () {
+    cy.visit('http://automationpractice.com/index.php')
+
+});
+Given(/^I type dress in the search field$/, function () {
+    cy.get('#search_query_top').type('dress')
+
+
+});
+When(/^I click on the search icon$/, function () {
+    cy.get('#searchbox > .btn').click()
+
+});
+Then(/^I verify that product page is displayed$/, function () {
+     cy.get('.page-heading').should('be.visible')
+
+});
+
+Given(/^I am on the home page$/, function () {
+    cy.visit('http://automationpractice.com/index.php')
+
+});
+Given(/^I leave the search field blank$/, function () {
+    cy.get('#search_query_top')
+
+});
+When(/^I click the search icon$/, function () {
+    cy.get('#searchbox > .btn').click()
+
+});
+Then(/^I verify that Please enter a search keyword is displayed$/, function () {
+    cy.get('.alert').should('be.visible')
+
+});
+Given(/^I am on the home page$/, function () {
+    cy.visit('http://automationpractice.com/index.php')
+
+});
+Given(/^I type asdfghjkl in the search field$/, function () {
+    cy.get('#search_query_top').type('asdfghjkl')
+
+});
+
+When(/^I click the search icon$/, function () {
+    cy.get('#searchbox > .btn').click()
+});
+Then(/^I verify that no results for your search were displayed$/, function () {
+    cy.get('.alert').should('be.visible')
+
+});
+Then(/^I log out$/, function () {
+    cy.get('.logout').click()
+});
