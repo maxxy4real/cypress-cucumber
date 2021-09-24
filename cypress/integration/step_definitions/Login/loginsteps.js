@@ -72,10 +72,10 @@ Then(/^I verify that product page is displayed$/, function () {
 
 });
 
-Given(/^I am on the home page$/, function () {
-    cy.visit('http://automationpractice.com/index.php')
-
-});
+// Given(/^I am on the home page$/, function () {
+//     cy.visit('http://automationpractice.com/index.php')
+//
+// });
 Given(/^I leave the search field blank$/, function () {
     cy.get('#search_query_top')
 
@@ -88,10 +88,10 @@ Then(/^I verify that Please enter a search keyword is displayed$/, function () {
     cy.get('.alert').should('be.visible')
 
 });
-Given(/^I am on the home page$/, function () {
-    cy.visit('http://automationpractice.com/index.php')
-
-});
+// Given(/^I am on the home page$/, function () {
+//     cy.visit('http://automationpractice.com/index.php')
+//
+// });
 Given(/^I type asdfghjkl in the search field$/, function () {
     cy.get('#search_query_top').type('asdfghjkl')
 
@@ -106,4 +106,14 @@ Then(/^I verify that no results for your search were displayed$/, function () {
 });
 Then(/^I log out$/, function () {
     cy.get('.logout').click()
+});
+Given(/^I enter email "([^"]*)" in the email field$/, function (myemail) {
+    cy.get('#email').type(myemail)
+});
+Given(/^I enter password "([^"]*)" in the password field$/, function (mypassword) {
+    cy.get('#passwd').type(mypassword)
+
+});
+Then(/^I verify "([^"]*)" on my detail page$/, function (expectedName) {
+    cy.get('.account > span').should('have.text', expectedName)
 });
