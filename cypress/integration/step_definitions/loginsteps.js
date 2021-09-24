@@ -5,20 +5,9 @@ Given(/^I am on the home page$/, function () {
 Given(/^I click on the signin link$/, function () {
     cy.get('.login').click()
 });
-Given(/^I enter my email adress$/, function () {
-    cy.get('#email').type('maxtesting6+2@gmail.com')
-});
-
-Given(/^I enter my password$/, function () {
-    cy.get('#passwd').type('Today01')
-});
 
 When(/^I click on the signin button$/, function () {
     cy.get('#SubmitLogin > span').click()
-});
-
-Then(/^I verify that I am logged in successfully$/, function () {
-    cy.get('.account > span').should('have.text', 'Mike Davies')
 });
 
 When(/^I search for dress$/, function () {
@@ -71,11 +60,6 @@ Then(/^I verify that product page is displayed$/, function () {
      cy.get('.page-heading').should('be.visible')
 
 });
-
-Given(/^I am on the home page$/, function () {
-    cy.visit('http://automationpractice.com/index.php')
-
-});
 Given(/^I leave the search field blank$/, function () {
     cy.get('#search_query_top')
 
@@ -88,10 +72,7 @@ Then(/^I verify that Please enter a search keyword is displayed$/, function () {
     cy.get('.alert').should('be.visible')
 
 });
-Given(/^I am on the home page$/, function () {
-    cy.visit('http://automationpractice.com/index.php')
 
-});
 Given(/^I type asdfghjkl in the search field$/, function () {
     cy.get('#search_query_top').type('asdfghjkl')
 
@@ -106,4 +87,19 @@ Then(/^I verify that no results for your search were displayed$/, function () {
 });
 Then(/^I log out$/, function () {
     cy.get('.logout').click()
+});
+
+Given(/^I enter email "([^"]*)" in the email field$/, function (myemail) {
+    cy.get('#email').type(myemail)
+});
+
+Given(/^I enter password "([^"]*)" in the password field$/, function (mypassword) {
+    cy.get('#passwd').type(mypassword)
+});
+
+Then(/^I verify "([^"]*)" on the detail page$/, function (myaccountName) {
+    cy.get('.account > span').should('have.text', myaccountName)
+});
+Then(/^I see "([^"]*)" message displayed$/, function (errorMessage) {
+    cy.get('ol > li').should('have.text', errorMessage)
 });
