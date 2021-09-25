@@ -27,3 +27,4 @@ Feature: Login
       | myemail        | mypassword     | errorMessage           |
       | mark@gmail.com | Today01        | Authentication failed. |
       | marksgmail.com | Monday01       | Invalid email address. |
+

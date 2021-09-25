@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --headed chrome"
+    "test": "npx cypress run --headed edge"
   },
   "author": "Maxwell",
   "license": "ISC",
