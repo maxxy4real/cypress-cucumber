@@ -23,5 +23,5 @@ Feature: forgot password
     Examples:
       | myemail            | messageError                                          |
       | glotaj98@gamil.com | There is no account registered for this email address.|
-      | glotaj98gmail.com  | Invalid email address.                                 |
+      | glotaj98gmail.com  | Invalid email address.                                |
 
