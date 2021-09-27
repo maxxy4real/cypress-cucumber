@@ -1,7 +1,3 @@
-Given(/^I am on the home page$/, function () {
-    cy.visit('http://automationpractice.com/index.php')
-});
-
 Given(/^I click on the signin link$/, function () {
     cy.get('.login').click()
 });
@@ -10,87 +6,8 @@ When(/^I click on the signin button$/, function () {
     cy.get('#SubmitLogin > span').click()
 });
 
-When(/^I search for dress$/, function () {
-    cy.get('#search_query_top').type('dress')
-    cy.get('#searchbox > .btn').click()
-});
-
-When(/^I add item to cart$/, function () {
-    cy.get(':nth-child(1) > .product-container > .right-block > .button-container > .ajax_add_to_cart_button > span').click()
-});
-
-When(/^proceed to checkout$/, function () {
-    cy.get('.button-container > .button-medium > span').click()
-    cy.get('.cart_navigation > .button > span').click()
-    cy.get('.cart_navigation > .button > span').click()
-});
-
-When(/^I accept terms and conditions and proceed to checkout$/, function () {
-    cy.get('#cgv').click()
-    cy.get('.cart_navigation > .button > span').click()
-});
-
-When(/^I choose check as payment method$/, function () {
-    cy.get('.bankwire').click()
-});
-
-When(/^I click confirm order$/, function () {
-    cy.get('#cart_navigation > .button > span').click()
-
-});
-
-Then(/^I verify order is complete and successful$/, function () {
-    cy.get('.box').contains('Your order on My Store is complete.')
-
-});
-
 Given(/^I am on the homepage$/, function () {
     cy.visit('http://automationpractice.com/index.php')
-
-});
-
-Given(/^I type dress in the search field$/, function () {
-    cy.get('#search_query_top').type('dress')
-
-});
-
-When(/^I click on the search icon$/, function () {
-    cy.get('#searchbox > .btn').click()
-
-});
-
-Then(/^I verify that product page is displayed$/, function () {
-     cy.get('.page-heading').should('be.visible')
-
-});
-
-Given(/^I leave the search field blank$/, function () {
-    cy.get('#search_query_top')
-
-});
-
-When(/^I click the search icon$/, function () {
-    cy.get('#searchbox > .btn').click()
-
-});
-
-Then(/^I verify that Please enter a search keyword is displayed$/, function () {
-    cy.get('.alert').should('be.visible')
-
-});
-
-Given(/^I type asdfghjkl in the search field$/, function () {
-    cy.get('#search_query_top').type('asdfghjkl')
-
-});
-
-When(/^I click the search icon$/, function () {
-    cy.get('#searchbox > .btn').click()
-});
-
-Then(/^I verify that no results for your search were displayed$/, function () {
-    cy.get('.alert').should('be.visible')
-
 });
 
 Then(/^I log out$/, function () {
@@ -111,27 +28,4 @@ Then(/^I verify "([^"]*)" on the detail page$/, function (myaccountName) {
 
 Then(/^I see "([^"]*)" message displayed$/, function (errorMessage) {
     cy.get('ol > li').should('have.text', errorMessage)
-});
-
-Given(/^I click on the forgot password link$/, function () {
-    cy.get('.lost_password > a').click()
-
-});
-
-When(/^I click on Retrieve password button$/, function () {
-    cy.get('.submit > .btn > span').click()
-
-})
-
-Then(/^I see confirmation message displayed$/, function () {
-    cy.get('.alert').should('be.visible')
-
-});
-Given(/^I click on forgot password link$/, function () {
-    cy.get('.lost_password > a').click()
-
-});
-Then(/^I see "([^"]*)"$/, function (messageError) {
-    cy.get('ol > li').should('have.text', messageError)
-
 });
