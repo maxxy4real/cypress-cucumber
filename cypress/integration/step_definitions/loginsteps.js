@@ -134,7 +134,7 @@ When(/^I click on the create an account button$/, function () {
     cy.get('#SubmitCreate > span').click()
 });
 Given(/^I enter email "([^"]*)" in the email address field$/, function () {
-    cy.get('#email_create').type('glotaj@agmail.com')
+    cy.get('#email_create').type('glota@agmail.com')
 
 });
 When(/^I click on the Mr button$/, function () {
