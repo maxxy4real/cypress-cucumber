@@ -5,20 +5,16 @@ Feature: forgot password
     And I click on the signin link
     And I click on the forgot password link
 
-  Scenario Outline: As a user I want to request for new password successfully
-    And I enter email "<myemail>" in the email field
+  Scenario: As a user I want to request for new password successfully
+    And I enter email "glow4life@gmail.com" in the email field
     And I click on Retrieve password button
     Then I see confirmation message displayed
-
-    Examples:
-      | myemail               |
-      | glow4life@gmail.com   |
-      | aji4real@gmail.com    |
+    And I click back to login
 
   Scenario Outline: Check for error message when I attempt retrieve password with incorrect details
     And I enter email "<myemail>" in the email field
     When I click on Retrieve password button
-    Then I see "<messageError>"
+    Then I see password "<messageError>" displayed
 
     Examples:
       | myemail            | messageError                                          |

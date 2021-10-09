@@ -1,19 +1,17 @@
 Feature: Search
 
   Background:
-    Given I am on the homepage
+    Given I am on the home page
 
-  Scenario: As a user I want to search successfully
-    And I type dress in the search field
+  Scenario Outline: As a user I want to understand search behavior
+    And I type "<searchword>" in the search field
     When I click on the search icon
-    Then I verify that product page is displayed
+    Then I verify "<searchresult>" displayed
 
-  Scenario: As a user I want to understand system behavior when I leave the search field blank
-    And I leave the search field blank
-    When I click the search icon
-    Then I verify that Please enter a search keyword is displayed
 
-  Scenario: As a user I want to understand system behavior when I type invalid search keyword
-    And I type asdfghjkl in the search field
-    When I click the search icon
-    Then I verify that no results for your search were displayed
+    Examples:
+    | searchword    | searchresult                 |
+    | dress         | 7 results have been found.   |
+    | asdfhjkl      | 0 results have been found.   |
+
+
