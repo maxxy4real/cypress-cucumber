@@ -4,6 +4,15 @@ Given(/^I click on the signin link$/, function () {
     login.clickSignIn()
 });
 
+When(/^I click on the signin button$/, function () {
+    cy.get('#SubmitLogin > span').click()
+});
+
+Then(/^I log out$/, function () {
+    cy.get('.logout').click()
+
+});
+
 Given(/^I enter email "([^"]*)" in the email field$/, function (myemail) {
     login.enterEmail(myemail)
 });
@@ -19,3 +28,5 @@ When(/^I click on the signin button$/, function () {
 Then(/^I see "([^"]*)" message displayed$/, function (errorMessage) {
     cy.get('ol > li').should('have.text', errorMessage)
 });
+
+

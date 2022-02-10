@@ -25,3 +25,8 @@ Then(/^I verify order is complete and successful$/, function () {
     cy.get('.box').contains('Your order on My Store is complete.')
 
 });
+When(/^I search for dress$/, function () {
+    cy.get('#search_query_top').type('dress')
+    cy.get('#searchbox > .btn').click()
+
+});

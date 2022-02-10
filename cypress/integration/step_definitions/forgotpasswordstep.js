@@ -1,16 +1,22 @@
+import {forgotPwd} from "./page-object/forgotpasswpage";
+
 Given(/^I click on the forgot password link$/, function () {
-    cy.get('.lost_password > a').click()
+    forgotPwd.clickForgotPwdLink()
 });
 
 When(/^I click on Retrieve password button$/, function () {
-    cy.get('.submit > .btn > span').click()
+    forgotPwd.clickRetrievePwdBtn()
 })
 
 Then(/^I see confirmation message displayed$/, function () {
-    cy.get('.alert').should('be.visible')
+    forgotPwd.verifyConfirmEmail()
 });
 
 Then(/^I see password "([^"]*)" displayed$/, function (messageError) {
-    cy.get('ol > li').should('have.text', messageError)
+    forgotPwd.verifyPasswordMsg(messageError)
+
+});
+Then(/^I click back to login$/, function () {
+    forgotPwd.clickBackToLoginBtn()
 
 });

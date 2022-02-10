@@ -9,6 +9,7 @@ Feature: forgot password
     And I enter email "glow4life@gmail.com" in the email field
     And I click on Retrieve password button
     Then I see confirmation message displayed
+    And I click back to login
 
   Scenario Outline: Check for error message when I attempt retrieve password with incorrect details
     And I enter email "<myemail>" in the email field
