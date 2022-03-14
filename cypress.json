@@ -1,6 +1,10 @@
 {
-  "baseUrl": "http://automationpractice.com",
+  "baseUrl": "https://accounts.google.com/AccountChooser/identifier?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser",
   "watchForFileChanges": false,
+  "waitForAnimations": false,
+  "animationDistanceThreshold": 50,
+  "chromeWebSecurity": false,
+  "reporter": "mochawesome",
   "testFiles": "**/*.feature"
 
 }

@@ -1,3 +1,3 @@
 Given(/^I am on the home page$/, function () {
-    cy.visit('/index.php')
+    cy.visit('/', { timeout: 40000 })
 });

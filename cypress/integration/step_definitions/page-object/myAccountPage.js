@@ -1,7 +1,7 @@
-export class Myaccountpage {
+export class MyAccountPage {
 
-    userAccount = '.account > span';
-    logout = '.logout';
+    userAccount = '.gb_Au gbu';
+    logout = '.wBFtm';
 
 
     verifyAccount(myaccountName){
@@ -13,4 +13,4 @@ export class Myaccountpage {
     }
 }
 
-export const account = new Myaccountpage()
+export const account = new MyAccountPage()
